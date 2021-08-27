@@ -1,0 +1,42 @@
+2x^3 + 3x^2 - 5x^4
+-6x^6 + 8x^2 + 1x^3
+
+dt 1		dt 2		ket qua
+2, 3		-6, 6		3, 3
+3, 2		8, 2		10, 2
+-5, 4		1, 3		-5, 4
+				-6, 6
+
+-> Cấu trúc 1 đa thức nhỏ nhất: a*x^n -> {hệ số a, số mũ n};
+-> 1 đa thức bản chất là tổng của nhiều đa thức nhỏ;
+-> cộng 2 đa thức là viết lại 2 đa thức này và rút gọn;
+-> Kiểu dữ liệu sử dụng: Map;
+-> Thuật toán: có thể áp dụng cộng nhiều đa thức
+	- với mỗi đa thức nhỏ được nhập vào sẽ lưu vào map với số mũ là key, hệ số là value,
+		nếu như key này đã tồn tại trong map thì cộng thêm thêm value hiện tại vào value đã có.
+	- kết quả ta sẽ được 1 map là tổng các đa thức chứa các cặp key - value tương ứng với 
+		số mũ - hệ số của từng đa thức nhỏ.
+
+* Phương án 1: đầu vào sẽ là chuỗi 2 đa thức vd: 
+	input 1: 2x^3 + 3x^2 - 5x^4
+	input 2: -6x^6 + 8x^2 + 1x^3
+
+	- xử lý tách chuỗi làm sao để tách được ra hệ số và số mũ từng đa thức nhỏ.
+		* chú ý xử lý cho cả 1 số trường hợp đầu vào đặc biệt như nhân/chia đa thức, ...:
+			- vd: 3*x^2*6*x^4, 7*x^3/4*x^2, ...
+				(3*x^2)*(6*x^4), (7*x^3)/(4*x^2), ...
+				...
+
+* Phương án 2: Tạo giao diện giống cái máy tính bấm tay để có thể làm theo cách là nhập đến đâu tính luôn đến đấy, hạn chế các
+	trường hợp đầu vào đặc biệt.
+		* Nên làm theo cách này này hơn vì ko phải xử lý nhiều trường hợp đầu vào
+		* Cách này thì sẽ làm hết việc cộng/trừ/nhân/chia đa thức
+
+* Có thể sử dụng các cấu trúc dữ liệu khác như stack, queue, danh sách liên kết, ... 
+nhưng hiện tại đang thấy map là tốt nhất.
+* Nếu thấy kiểu dữ liệu nào tốt hơn thì trao đổi để xem xét
+
+- Nhật: Xử lý chuỗi
+- Huy: Thuật toán
+- Phúc: Giao diện
+- Thanh: Word
