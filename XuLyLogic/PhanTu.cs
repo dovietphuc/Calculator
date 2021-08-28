@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculator.XuLyLogic
 {
-    class PhanTu
+    public class PhanTu
     {
 
         private int heSo;
