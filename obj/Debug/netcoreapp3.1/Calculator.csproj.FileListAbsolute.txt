@@ -4,7 +4,6 @@ E:\chuyendenganh\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtim
 E:\chuyendenganh\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.dev.json
 E:\chuyendenganh\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.dll
 E:\chuyendenganh\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.pdb
-E:\chuyendenganh\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.csprojAssemblyReference.cache
 E:\chuyendenganh\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.CalculatorForm.resources
 E:\chuyendenganh\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.GenerateResource.cache
 E:\chuyendenganh\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfoInputs.cache
