@@ -6,6 +6,7 @@ namespace Calculator.XuLyLogic
 {
     class PhanTu
     {
+
         private int heSo;
         private int soMu;
 
@@ -35,7 +36,6 @@ namespace Calculator.XuLyLogic
             this.soMu = soMu;
         }
 
-
-
     }
+
 }
