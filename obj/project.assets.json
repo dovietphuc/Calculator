@@ -8,24 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\dovie\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\chuyendenganh\\Calculator\\Calculator\\Calculator.csproj",
+      "projectUniqueName": "D:\\OtherCode\\C#\\Calculator\\Calculator.csproj",
       "projectName": "Calculator",
-      "projectPath": "E:\\chuyendenganh\\Calculator\\Calculator\\Calculator.csproj",
-      "packagesPath": "C:\\Users\\dovie\\.nuget\\packages\\",
-      "outputPath": "E:\\chuyendenganh\\Calculator\\Calculator\\obj\\",
+      "projectPath": "D:\\OtherCode\\C#\\Calculator\\Calculator.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\OtherCode\\C#\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\dovie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
