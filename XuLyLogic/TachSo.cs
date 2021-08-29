@@ -15,8 +15,7 @@ namespace Calculator.XuLyLogic
 
         public List<PhanTu> createPhanTus(string str)
         {
-            
-
+            str = str.Replace(" ", "");
             String[] s = { "+" };
             String[] subEx = str.Split(s, str.Length,
                    StringSplitOptions.None);
@@ -45,12 +44,12 @@ namespace Calculator.XuLyLogic
                 if (strlist.Length == 2)
                 {
                     ((ILog)parent).log("Sub string: He so: " + strlist[0] + " - So Mu: " + strlist[1]);
-                    result.Add(new PhanTu(Int32.Parse(strlist[0]), Int32.Parse(strlist[1])));
+                    result.Add(new PhanTu(float.Parse(strlist[0]), float.Parse(strlist[1])));
                 }
                 if (strlist.Length == 1)
                 {
                     ((ILog)parent).log("Sub string: He so: " + strlist[0] + " - So Mu: " + 0);
-                    result.Add(new PhanTu(Int32.Parse(strlist[0]), 0));
+                    result.Add(new PhanTu(float.Parse(strlist[0]), 0));
                 }
             }
             

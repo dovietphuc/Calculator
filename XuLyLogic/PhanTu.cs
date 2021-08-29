@@ -7,31 +7,31 @@ namespace Calculator.XuLyLogic
     public class PhanTu
     {
 
-        private int heSo;
-        private int soMu;
+        private float heSo;
+        private float soMu;
 
-        public PhanTu(int heSo, int soMu)
+        public PhanTu(float heSo, float soMu)
         {
             this.heSo = heSo;
             this.soMu = soMu;
         }
 
-        public int getHeSo()
+        public float getHeSo()
         {
             return this.heSo;
         }
 
-        public void setHeSo(int heSo)
+        public void setHeSo(float heSo)
         {
             this.heSo = heSo;
         }
 
-        public int getSoMu()
+        public float getSoMu()
         {
             return this.soMu;
         }
 
-        public void setSoMu(int soMu)
+        public void setSoMu(float soMu)
         {
             this.soMu = soMu;
         }
