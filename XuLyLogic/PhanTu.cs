@@ -36,6 +36,10 @@ namespace Calculator.XuLyLogic
             this.soMu = soMu;
         }
 
+        override
+        public String ToString()
+        {
+            return "He so: " + heSo + " - So mu: " + soMu;
+        }
     }
-
 }

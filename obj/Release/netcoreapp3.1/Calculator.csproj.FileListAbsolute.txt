@@ -1,0 +1,14 @@
+E:\chuyendenganh\Calculator\Calculator\bin\Release\netcoreapp3.1\Calculator.exe
+E:\chuyendenganh\Calculator\Calculator\bin\Release\netcoreapp3.1\Calculator.deps.json
+E:\chuyendenganh\Calculator\Calculator\bin\Release\netcoreapp3.1\Calculator.runtimeconfig.json
+E:\chuyendenganh\Calculator\Calculator\bin\Release\netcoreapp3.1\Calculator.runtimeconfig.dev.json
+E:\chuyendenganh\Calculator\Calculator\bin\Release\netcoreapp3.1\Calculator.dll
+E:\chuyendenganh\Calculator\Calculator\bin\Release\netcoreapp3.1\Calculator.pdb
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.CalculatorForm.resources
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.csproj.GenerateResource.cache
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.AssemblyInfoInputs.cache
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.AssemblyInfo.cs
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.csproj.CoreCompileInputs.cache
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.dll
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.pdb
+E:\chuyendenganh\Calculator\Calculator\obj\Release\netcoreapp3.1\Calculator.genruntimeconfig.cache

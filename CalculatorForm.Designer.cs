@@ -31,6 +31,7 @@ namespace Calculator
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnEqual = new System.Windows.Forms.Button();
@@ -54,9 +55,9 @@ namespace Calculator
             this.btn7 = new System.Windows.Forms.Button();
             this.txtInput = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtLog = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtLog = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,6 +75,7 @@ namespace Calculator
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.btnBack);
             this.panel4.Controls.Add(this.btnClear);
             this.panel4.Controls.Add(this.btnEqual);
@@ -100,12 +102,23 @@ namespace Calculator
             this.panel4.Size = new System.Drawing.Size(400, 361);
             this.panel4.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(324, 112);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 50);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "x";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_Click);
+            // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBack.Location = new System.Drawing.Point(162, 224);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(237, 50);
+            this.btnBack.Size = new System.Drawing.Size(156, 50);
             this.btnBack.TabIndex = 21;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -125,10 +138,10 @@ namespace Calculator
             // btnEqual
             // 
             this.btnEqual.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEqual.Location = new System.Drawing.Point(324, 112);
+            this.btnEqual.Location = new System.Drawing.Point(324, 168);
             this.btnEqual.Name = "btnEqual";
             this.btnEqual.Size = new System.Drawing.Size(75, 106);
-            this.btnEqual.TabIndex = 19;
+            this.btnEqual.TabIndex = 22;
             this.btnEqual.Text = "=";
             this.btnEqual.UseVisualStyleBackColor = true;
             this.btnEqual.Click += new System.EventHandler(this.btnEqual_Click);
@@ -350,8 +363,18 @@ namespace Calculator
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(418, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(370, 426);
+            this.panel2.Size = new System.Drawing.Size(582, 426);
             this.panel2.TabIndex = 1;
+            // 
+            // txtLog
+            // 
+            this.txtLog.Location = new System.Drawing.Point(0, 34);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.ReadOnly = true;
+            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtLog.Size = new System.Drawing.Size(581, 390);
+            this.txtLog.TabIndex = 1;
             // 
             // label1
             // 
@@ -370,20 +393,11 @@ namespace Calculator
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 1;
             // 
-            // txtLog
-            // 
-            this.txtLog.Location = new System.Drawing.Point(0, 34);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ReadOnly = true;
-            this.txtLog.Size = new System.Drawing.Size(369, 390);
-            this.txtLog.TabIndex = 1;
-            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1012, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "CalculatorForm";
@@ -429,5 +443,6 @@ namespace Calculator
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.Button button1;
     }
 }
