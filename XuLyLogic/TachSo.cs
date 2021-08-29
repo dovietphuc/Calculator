@@ -15,51 +15,75 @@ namespace Calculator.XuLyLogic
 
         public List<PhanTu> createPhanTus(string str)
         {
-            //String[] spearator = { "x", "(", "^", "*", ")" };
-            //Int32 count = 4;
-            //var coSo = 0;
-            //var soMu = 0;
-            //// using the method
-            //String[] strlist = str.Split(spearator, count,
-            //       StringSplitOptions.RemoveEmptyEntries);
-            //for (int i = 0; i < strlist.Length; i++)
-            //{
-            //    if (i == 0)
-            //        coSo = Int32.Parse(strlist[i]);
-            //    else
-            //        soMu = Int32.Parse(strlist[i]);
-            //}
-
-            //var so = new PhanTu(coSo, soMu);
-            //return so;
-            //var str = "2x^6";
-
-            String[] s = { "+", "-" };
+            str = str.Replace(" ", "");
+            String[] s = { "+" };
             String[] subEx = str.Split(s, str.Length,
                    StringSplitOptions.None);
+            var text = "";
+            foreach (var item in subEx)
+            {
+                text += NoiChuoi(item) + ",";
+            }
+
+            String[] dauphay = { "," };
+            Int32 count = 10;
+
+            //using the method
+            String[] strlistdauphay = text.Split(dauphay, count,
+                   StringSplitOptions.RemoveEmptyEntries);
+
 
             String[] spearator = { "x", "^" };
             List<PhanTu> result = new List<PhanTu>();
-            for(int i = 0; i < subEx.Length; i++)
+            for(int i = 0; i < strlistdauphay.Length; i++)
             {
                 // using the method
-                String[] strlist = subEx[i].Split(spearator, subEx.Length,
+                String[] strlist = strlistdauphay[i].Split(spearator, strlistdauphay.Length,
                        StringSplitOptions.RemoveEmptyEntries);
 
                 if (strlist.Length == 2)
                 {
                     ((ILog)parent).log("Sub string: He so: " + strlist[0] + " - So Mu: " + strlist[1]);
-                    result.Add(new PhanTu(Int32.Parse(strlist[0]), Int32.Parse(strlist[1])));
+                    result.Add(new PhanTu(float.Parse(strlist[0]), float.Parse(strlist[1])));
                 }
                 if (strlist.Length == 1)
                 {
                     ((ILog)parent).log("Sub string: He so: " + strlist[0] + " - So Mu: " + 0);
-                    result.Add(new PhanTu(Int32.Parse(strlist[0]), 0));
+                    result.Add(new PhanTu(float.Parse(strlist[0]), 0));
                 }
             }
             
             
             return result;
         }
+        public static string NoiChuoi(string str)
+        {
+            var text = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                text += str[i];
+
+                if (Convert.ToString(str[0]) == "-")
+                {
+
+                }
+                if (Convert.ToString(str[i]) == "-" && i != 0)
+                {
+                    if (text != "")
+                    {
+                        text = text.Remove(text.Length - 1);
+                        text += ",-";
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(text);
+                }
+            }
+            text = text.Replace("^,", "^");
+            return text;
+        }
+
     }
 }

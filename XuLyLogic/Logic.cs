@@ -19,7 +19,7 @@ namespace Calculator.XuLyLogic
         {
             //int heSo = (int)hashTable.Get(pt.getSoMu());
 
-            int heSo = pt.getHeSo();
+            float heSo = pt.getHeSo();
             if (hashTable.IsExist(pt.getSoMu()))
             {
                 heSo += ((PhanTu)hashTable.Get(pt.getSoMu())).getHeSo();
@@ -39,7 +39,14 @@ namespace Calculator.XuLyLogic
                 {
                     s += "+";
                 }
-                s += phanTu.getHeSo() + "x^" + phanTu.getSoMu();
+                if(phanTu.getSoMu() != 0)
+                {
+                    s += phanTu.getHeSo() + "x^" + phanTu.getSoMu();
+                }
+                else
+                {
+                    s += phanTu.getHeSo();
+                }
                 if (parent is ILog)
                 {
                     ((ILog)parent).log("HashItem: " + phanTu);
