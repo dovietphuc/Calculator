@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculator.XuLyLogic
 {
-    class PhanTu
+    public class PhanTu
     {
 
         private int heSo;
@@ -36,6 +36,10 @@ namespace Calculator.XuLyLogic
             this.soMu = soMu;
         }
 
+        override
+        public String ToString()
+        {
+            return "He so: " + heSo + " - So mu: " + soMu;
+        }
     }
-
 }

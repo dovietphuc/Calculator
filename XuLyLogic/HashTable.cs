@@ -8,7 +8,7 @@ namespace Calculator.XuLyLogic
     {
         const int ARR_SIZE = 20;
 
-        private static LinkedList<HashItem>[] array1 = new LinkedList<HashItem>[ARR_SIZE];
+        private LinkedList<HashItem>[] array1 = new LinkedList<HashItem>[ARR_SIZE];
 
         public List<Object> keys = new List<Object>();
 
@@ -42,7 +42,7 @@ namespace Calculator.XuLyLogic
             }
         }
 
-        public static long Hash(Object value)
+        public long Hash(Object value)
         {
             return ConvertStringToInt(value.ToString()) % ARR_SIZE;
         }
@@ -137,7 +137,7 @@ namespace Calculator.XuLyLogic
         }
 
 
-        public static long ConvertStringToInt(string s)
+        public long ConvertStringToInt(string s)
         {
             long result = 0;
             byte[] arr = Encoding.UTF8.GetBytes(s);

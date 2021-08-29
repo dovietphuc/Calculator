@@ -8,7 +8,11 @@ namespace Calculator.XuLyLogic
 {
     class Logic
     {
-
+        Object parent;
+        public Logic(Object parent)
+        {
+            this.parent = parent;
+        }
         HashTable hashTable = new HashTable();
 
         public void PushItem(PhanTu pt)
@@ -16,21 +20,37 @@ namespace Calculator.XuLyLogic
             //int heSo = (int)hashTable.Get(pt.getSoMu());
 
             int heSo = pt.getHeSo();
-
             if (hashTable.IsExist(pt.getSoMu()))
             {
-                heSo += (int)hashTable.Get(pt.getSoMu());
+                heSo += ((PhanTu)hashTable.Get(pt.getSoMu())).getHeSo();
+                pt.setHeSo(heSo);
             }
 
-            hashTable.Add(pt.getSoMu(), heSo);
+            hashTable.Add(pt.getSoMu(), pt);
         }
 
-        public void ShowHashTable()
+        public String result()
         {
+            String s = "";
             for (int i = 0; i < hashTable.keys.Count; i++)
             {
-                Console.WriteLine(hashTable.Get(hashTable.keys[i]) + " " + hashTable.keys[i]);
+                PhanTu phanTu = (PhanTu)hashTable.Get(hashTable.keys[i]);
+                if(i > 0)
+                {
+                    s += "+";
+                }
+                s += phanTu.getHeSo() + "x^" + phanTu.getSoMu();
+                if (parent is ILog)
+                {
+                    ((ILog)parent).log("HashItem: " + phanTu);
+                }
             }
+            return s;
+        }
+
+        public void clearHashTable()
+        {
+            hashTable = new HashTable();
         }
     }
 }
