@@ -35,7 +35,7 @@ namespace Calculator.XuLyLogic
             for (int i = 0; i < hashTable.keys.Count; i++)
             {
                 PhanTu phanTu = (PhanTu)hashTable.Get(hashTable.keys[i]);
-                if(i > 0)
+                if(i > 0 && phanTu.getHeSo() >= 0)
                 {
                     s += "+";
                 }
