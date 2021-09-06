@@ -26,12 +26,10 @@ namespace Calculator.XuLyLogic
             }
 
             String[] dauphay = { "," };
-            Int32 count = 10;
 
             //using the method
-            String[] strlistdauphay = text.Split(dauphay, count,
+            String[] strlistdauphay = text.Split(dauphay, text.Length,
                    StringSplitOptions.RemoveEmptyEntries);
-
 
             String[] spearator = { "x", "^" };
             List<PhanTu> result = new List<PhanTu>();
@@ -56,33 +54,38 @@ namespace Calculator.XuLyLogic
             
             return result;
         }
-        public static string NoiChuoi(string str)
+        public string NoiChuoi(string str)
         {
-            var text = "";
+            //var text = "";
 
-            for (int i = 0; i < str.Length; i++)
+            //for (int i = 0; i < str.Length; i++)
+            //{
+            //    text += str[i];
+
+            //    if (Convert.ToString(str[0]) == "-")
+            //    {
+
+            //    }
+            //    if (Convert.ToString(str[i]) == "-" && i != 0)
+            //    {
+            //        if (text != "")
+            //        {
+            //            text = text.Remove(text.Length - 1);
+            //            text += ",-";
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(text);
+            //    }
+            //}
+            str = str.Replace("-", ",-");
+            if (str[0].Equals(","))
             {
-                text += str[i];
-
-                if (Convert.ToString(str[0]) == "-")
-                {
-
-                }
-                if (Convert.ToString(str[i]) == "-" && i != 0)
-                {
-                    if (text != "")
-                    {
-                        text = text.Remove(text.Length - 1);
-                        text += ",-";
-                    }
-                }
-                else
-                {
-                    Console.WriteLine(text);
-                }
+                str.Remove(0);
             }
-            text = text.Replace("^,", "^");
-            return text;
+            str = str.Replace("^,", "^");
+            return str;
         }
 
     }
