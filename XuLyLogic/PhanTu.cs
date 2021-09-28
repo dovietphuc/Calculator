@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculator.XuLyLogic
 {
-    public class PhanTu
+    public class PhanTu : IComparable
     {
 
         private float heSo;
@@ -40,6 +40,13 @@ namespace Calculator.XuLyLogic
         public String ToString()
         {
             return "He so: " + heSo + " - So mu: " + soMu;
+        }
+
+        public int CompareTo(object obj)
+        {
+            int soMuCompare = (int)(soMu - ((PhanTu)obj).soMu);
+            int heSoCompare = (int)(heSo - ((PhanTu)obj).heSo);
+            return (soMuCompare == 0) ? heSoCompare : soMuCompare;
         }
     }
 }

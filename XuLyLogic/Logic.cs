@@ -9,27 +9,53 @@ namespace Calculator.XuLyLogic
     class Logic
     {
         Object parent;
+        HashTable hashTable;
+        CustomLinkedList<PhanTu> linkedList;
+
         public Logic(Object parent)
         {
             this.parent = parent;
         }
-        HashTable hashTable = new HashTable();
 
-        public void PushItem(PhanTu pt)
+        public string usingHashTable(List<PhanTu> phanTus)
         {
-            //int heSo = (int)hashTable.Get(pt.getSoMu());
-
-            float heSo = pt.getHeSo();
-            if (hashTable.IsExist(pt.getSoMu()))
+            hashTable = new HashTable();
+            foreach (PhanTu pt in phanTus)
             {
-                heSo += ((PhanTu)hashTable.Get(pt.getSoMu())).getHeSo();
-                pt.setHeSo(heSo);
-            }
+                float heSo = pt.getHeSo();
+                if (hashTable.IsExist(pt.getSoMu()))
+                {
+                    heSo += ((PhanTu)hashTable.Get(pt.getSoMu())).getHeSo();
+                    pt.setHeSo(heSo);
+                }
 
-            hashTable.Add(pt.getSoMu(), pt);
+                hashTable.Add(pt.getSoMu(), pt);
+            }
+            return resultHashTable();
         }
 
-        public String result()
+        public string usingLinkList(List<PhanTu> phanTus)
+        {
+            linkedList = new CustomLinkedList<PhanTu>();
+            foreach (PhanTu pt in phanTus)
+            {
+                bool isExist = false;
+                linkedList.Traverse(s => 
+                    { 
+                        if (pt.getSoMu() == s.getSoMu()) {
+                            isExist = true;
+                            s.setHeSo(s.getHeSo() + pt.getHeSo());
+                        }
+                    });
+                if (!isExist)
+                {
+                    linkedList.Add(pt);
+                }
+            }
+            return resultLinkList();
+        }
+
+        public String resultHashTable()
         {
             String s = "";
             for (int i = 0; i < hashTable.keys.Count; i++)
@@ -55,9 +81,31 @@ namespace Calculator.XuLyLogic
             return s;
         }
 
-        public void clearHashTable()
+        public String resultLinkList()
         {
-            hashTable = new HashTable();
+            String s = "";
+            int i = 0;
+            linkedList.Traverse(phanTu =>
+            {
+                if (i > 0 && phanTu.getHeSo() >= 0)
+                {
+                    s += "+";
+                }
+                if (phanTu.getSoMu() != 0)
+                {
+                    s += phanTu.getHeSo() + "x^" + phanTu.getSoMu();
+                }
+                else
+                {
+                    s += phanTu.getHeSo();
+                }
+                if (parent is ILog)
+                {
+                    ((ILog)parent).log("Linklist note: " + phanTu);
+                }
+                i++;
+            });
+            return s;
         }
     }
 }
