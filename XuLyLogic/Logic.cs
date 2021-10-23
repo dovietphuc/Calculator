@@ -1,6 +1,7 @@
 ﻿using System;
-
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Calculator.XuLyLogic
@@ -45,6 +46,7 @@ namespace Calculator.XuLyLogic
                         if (pt.getSoMu() == s.getSoMu()) {
                             isExist = true;
                             s.setHeSo(s.getHeSo() + pt.getHeSo());
+                            return;
                         }
                     });
                 if (!isExist)
@@ -58,6 +60,7 @@ namespace Calculator.XuLyLogic
         public String resultHashTable()
         {
             String s = "";
+            hashTable.keys.Sort();
             for (int i = 0; i < hashTable.keys.Count; i++)
             {
                 PhanTu phanTu = (PhanTu)hashTable.Get(hashTable.keys[i]);
@@ -85,6 +88,7 @@ namespace Calculator.XuLyLogic
         {
             String s = "";
             int i = 0;
+            linkedList.Sort();
             linkedList.Traverse(phanTu =>
             {
                 if (i > 0 && phanTu.getHeSo() >= 0)
@@ -106,6 +110,14 @@ namespace Calculator.XuLyLogic
                 i++;
             });
             return s;
+        }
+
+        private class PhanTuComparer : IComparer<PhanTu>
+        {
+            public int Compare(PhanTu x, PhanTu y)
+            {
+                return (int)(x.getSoMu() - y.getSoMu());
+            }
         }
     }
 }

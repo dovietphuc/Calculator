@@ -98,5 +98,46 @@ namespace Calculator.XuLyLogic
                 currentNode = currentNode.Next;
             }
         }
+
+        public void Sort()
+        {
+            if (Header == null || Header.Next == null) return; // there is nothing to sort
+            InsertionSort(Header, null);
+        }
+
+        public void Sort(IComparer<T> comparer)
+        {
+            if (Header == null || Header.Next == null) return; // there is nothing to sort
+            InsertionSort(Header, comparer);
+        }
+
+        private void Swap(Node<T> a, Node<T> b)
+        {
+            var tmp = a.Data;
+            a.Data = b.Data;
+            b.Data = tmp;
+        }
+
+        private void InsertionSort(Node<T> head, IComparer<T> comparer)
+        {
+            if (head == null || head.Next == null) return; // there is nothing to sort
+
+            Node<T> i = head.Next;
+            Node<T> j = i.Next;
+            while (i != null)
+            {
+                j = i.Next;
+                while(j != null)
+                {
+                    if ((comparer != null && comparer.Compare(i.Data, j.Data) > 0)
+                        || (comparer == null && i.Data.CompareTo(j.Data) > 0))
+                    {
+                        Swap(i, j);
+                    }
+                    j = j.Next;
+                }
+                i = i.Next;
+            }
+        }
     }
 }
